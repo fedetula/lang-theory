@@ -1,0 +1,42 @@
+Javascript: 
+
+Whenever JavaScript executes a function, a 'scope' object is created to hold the local variables created within that function. It is initialized with any variables passed in as function parameters.
+Normally the garbage collector would clean up the scope object after the function returns except if this holds a reference to it.
+Difference with a global scope is that there is no way to make a reference to the scope, there is no mechanism for iterating over the properties of the current scope object, for example.
+
+Simplest python vs javascript:
+
+a = 3
+def f1():
+    print(a, b)
+b = 1
+f1()
+def f2():
+    a = 2
+    global b = 4
+    print(a, b)
+f2()
+f1()
+--------------
+var a = 3;
+function f1() {
+    console.log(a, b);
+var b = 1;
+f1();
+function f2() {
+    var a = 2;
+    b = 4;
+    console.log(a, b);
+f2();
+f1();
+
+TODO:
+- Functional languages
+- Examples
+- Use cases
+- Language comparisons
+
+References:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
